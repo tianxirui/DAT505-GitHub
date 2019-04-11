@@ -51,7 +51,7 @@ function init() {
 var cubescale=(Math.random()*-2)+1;
   mesh = new THREE.Mesh( geometry, material );
 mesh.position.x=(Math.random()*-200)+40;
-  mesh.position.y=(Math.random()*-100)+50;
+  mesh.position.y=(Math.random()*-150)+10;
 	mesh.scale.x=cubescale;
 	mesh.scale.y=cubescale;
 	  mesh.scale.z=cubescale;
