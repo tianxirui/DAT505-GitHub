@@ -85,7 +85,7 @@ function init() {
   lights[0] = new THREE.DirectionalLight( 0xffffff, 0.2 );
   lights[0].position.set( 1, 2, -0.5);
   lights[1] = new THREE.DirectionalLight( 0x11E8BB, 0.3 );
-  lights[1].position.set( 1, -1, 0.5 );
+  lights[1].position.set( 1, -1, 5 );
   lights[2] = new THREE.DirectionalLight( 0x8200C9, 0.7 );
   lights[2].position.set( -1., -1, -0.1 );
   lights[3] = new THREE.DirectionalLight( 0x8200C9, 0.8 );
@@ -100,7 +100,7 @@ function init() {
   //composer.addPass( new THREE.RenderPass( scene, camera ) );
   var renderPass = new THREE.RenderPass(scene, camera);
 
-  rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
+  rgbPass = new THREE.ShaderPass( THREE.KaleidoShader);
   //rgbPass.uniforms[ 'amount' ].value = 0.005;
   //rgbPass.renderToScreen = true;
   composer.addPass ( renderPass );
