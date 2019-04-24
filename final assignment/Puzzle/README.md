@@ -1,8 +1,10 @@
-# Puzzle 拼图游戏
-## 实现原理
-### **1.如何切图？**
-用之前的方法就是使用photoshop将图片切成相应大小的图片。这种做法不灵活，如果要更换图片的话，就得重新去切图，很麻烦。
-现在是使用canvas，图片是一整张jpg或者png，把图片导入到canvas画布，然后再调用上下文context的getImageData方法，把图片处理成小图，这些小图就作为拼图的基本单位
+# Jigsaw puzzle game
+
+### **1.How to cut the picture into corresponding size？**
+#The previous method is to use photoshop to cut the image into the corresponding size of the image. This method is not flexible, if you want to change the picture, you have to go to cut the picture, very troublesome.
+
+#Now I use canvas, the picture is a whole JPG or PNG, import the picture into the canvas canvas, and then call the getImageData method of context context to process the picture into small pictures, which are the basic units of the puzzle.
+
 ```
 renderImg: function (image) {
             var index = 0;
@@ -16,8 +18,9 @@ renderImg: function (image) {
             }
         },
 ```
-### **2.如何判断游戏是否结束?**
-在刚刚生成的小图上面添加自定义属性 ， 后期在小图被移动后再一个个判断，如果顺序是对的，那么这张大图就拼接成功， 允许进入下一关；
+### **2.How to tell if the game is over?**
+#Add custom attributes to the small picture just generated, and judge them one by one after the small picture is moved in the later stage. If the order is correct, the big picture will be successfully spliced, allowing it to enter the next level.
+
 ```
 isSuccess: function () {
             var imgLikeArr = document.querySelectorAll('img'),
@@ -39,8 +42,8 @@ isSuccess: function () {
         }
 ```
 
-### **3.如何实现小图片随机排列？**
-使用math.random
+### **3.How to achieve random arrangement of small pictures？**
+# use math.random
 ```
  randomImg: function () {
              this.imgArr.sort(function () {
@@ -48,9 +51,8 @@ isSuccess: function () {
              });
          },
 ```
-### **4.拖拽功能实现？**
+### **4.Drag function implementation？**
 ```
-//监听dragstart设置拖拽数据
             on(contain, 'dragstart', function (e) {
                 var target = getTarget(e);
 
@@ -61,7 +63,6 @@ isSuccess: function () {
 
             on(contain, 'drop', function (ev) {
                 var target = getTarget(ev);
-　　　　　　　　//交换图片
                 if (target.tagName.toLowerCase() == "img") {
                     var originObj = document.getElementById(ev.dataTransfer.getData('id'));
                     var cache = {
@@ -83,10 +84,7 @@ isSuccess: function () {
                 }
             });
 
-            //取消浏览器默认行为使元素可拖放.
             on(contain, 'dragover', function (ev) {
                 ev.preventDefault();
             });
 ```
-核心代码和思路就是上面这些
-

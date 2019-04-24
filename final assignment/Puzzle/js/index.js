@@ -20,7 +20,7 @@
             };
         },
 
-        //canvas绘制图片
+        //canvasDraw pictures
         renderImg: function (image) {
             var index = 0;
             for (var i = 0; i < 3; i++) {
@@ -32,13 +32,14 @@
                 }
             }
         },
-        //监听事件
+        //Listen for an event
+
         dragEvent: function () {
             var contain = document.getElementById('game'),
                 next = document.getElementById('next'),
                 self = this;
 
-            //监听dragstart设置拖拽数据
+            //listening dragstart,Set drag data
             on(contain, 'dragstart', function (e) {
                 var target = getTarget(e);
 
@@ -71,7 +72,8 @@
                 }
             });
 
-            //取消浏览器默认行为使元素可拖放.
+            //Make it possible to switch to the next image by clicking next.
+
             on(contain, 'dragover', function (ev) {
                 ev.preventDefault();
             });
@@ -83,23 +85,24 @@
             });
 
         },
-        //实现小块图片的随机排序
+        //Realize random sorting of small pictures
+
         randomImg: function () {
             this.imgArr.sort(function () {
                 return Math.random() - Math.random();
             });
         },
-        //遮罩层
+        //hide
         showtip: function () {
             var hint = document.querySelector('.hint');
             hint.classList.toggle('hide');
         },
-//改变步数
+       //change step
         changestep: function () {
             var step = document.getElementById('step');
             step.innerText = +step.innerText + 1;
         },
-//判断游戏是否完成
+//To determine whether the task is completed
         isSuccess: function () {
             var imgLikeArr = document.querySelectorAll('img'),
                 imgArr = Array.prototype.slice.call(imgLikeArr),
@@ -120,7 +123,6 @@
         }
     };
 
-    //事件代理
     function on(ele, type, handler) {
         if (ele.addEventListener) {
             return ele.addEventListener(type, handler, false);
@@ -139,8 +141,8 @@
     }
 
 
-//调用
+//Call the data
     var puzzle = new Puzzle();
     puzzle.init('img/01.jpg');
 
-})();
+});
