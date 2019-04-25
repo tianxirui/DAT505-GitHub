@@ -1,3 +1,6 @@
+# NAME：TIAN XIRUI
+# B161006086
+
 # Jigsaw puzzle game
 
 ### **1.How to cut the picture into corresponding size？**
