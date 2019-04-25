@@ -20,7 +20,7 @@
             };
         },
 
-        //canvasDraw pictures
+        //canvas Draw pictures
         renderImg: function (image) {
             var index = 0;
             for (var i = 0; i < 3; i++) {
@@ -33,7 +33,6 @@
             }
         },
         //Listen for an event
-
         dragEvent: function () {
             var contain = document.getElementById('game'),
                 next = document.getElementById('next'),
@@ -73,7 +72,6 @@
             });
 
             //Make it possible to switch to the next image by clicking next.
-
             on(contain, 'dragover', function (ev) {
                 ev.preventDefault();
             });
@@ -86,7 +84,6 @@
 
         },
         //Realize random sorting of small pictures
-
         randomImg: function () {
             this.imgArr.sort(function () {
                 return Math.random() - Math.random();
@@ -97,7 +94,7 @@
             var hint = document.querySelector('.hint');
             hint.classList.toggle('hide');
         },
-       //change step
+//change step
         changestep: function () {
             var step = document.getElementById('step');
             step.innerText = +step.innerText + 1;
@@ -123,6 +120,7 @@
         }
     };
 
+    //The event agent
     function on(ele, type, handler) {
         if (ele.addEventListener) {
             return ele.addEventListener(type, handler, false);
@@ -145,4 +143,4 @@
     var puzzle = new Puzzle();
     puzzle.init('img/01.jpg');
 
-});
+})();
