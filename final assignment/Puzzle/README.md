@@ -94,4 +94,5 @@ isSuccess: function () {
 #### I wanted to do a Mixed-media collage. My idea is to use broken images to let people collage a complete picture, combined with the help of the drag code in the example, to make an interactive image collage.
 #### After asking the teacher and searching the Internet for information, I finished my homework. The pictures I used in the homework were the pictures I created in the geography and psychology homework last semester.
 
+#### Final assignment link
 https://github.com/tianxirui/DAT505-GitHub/tree/master/final%20assignment/Puzzle
